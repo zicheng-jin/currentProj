@@ -1,0 +1,7 @@
+export const constructUrl = (clientId: string, requestId: string, linkId: string) => {
+  return `/api/link/initiate?iframe=true&client_id=${encodeURIComponent(
+    clientId
+  )}&request_id=${encodeURIComponent(requestId)}&link_id=${encodeURIComponent(
+    linkId
+  )}`;
+};
