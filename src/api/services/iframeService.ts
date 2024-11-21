@@ -1,6 +1,11 @@
 import { fetchGet } from "../api";
 import { ENDPOINTS } from "../apiEndpoints";
 
-export const getIframeInitiateSrc = async () => {
-    return fetchGet<{ iframeUrl: string }>(ENDPOINTS.connect);
-}
+type IframeDetails = {
+  consentUrl: string;
+  redirectUrl: string;
+};
+
+export const getIframeInitiateSrc = async (url: string) => {
+  return fetchGet<IframeDetails>(url);
+};
